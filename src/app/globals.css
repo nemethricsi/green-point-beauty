@@ -23,7 +23,7 @@
   /* --background: var(--white);
   --foreground: var(--black); */
   --radius: 0.625rem;
-  --background: deeppink; /* oklch(1 0 0); */
+  --background: var(--white);
   --foreground: var(--black);
   --card: deeppink; /* oklch(1 0 0); */
   --card-foreground: deeppink; /* oklch(0.145 0 0); */
