@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -7,41 +7,53 @@
   --black: #2e2e2e;
   --white: #fefefe;
 
+  --fuego-50: #fafce9;
+  --fuego-100: #f4f8cf;
+  --fuego-200: #e8f1a5;
+  --fuego-300: #d5e571;
+  --fuego-400: #c2d84c;
+  --fuego-500: #a2bc26;
+  --fuego-600: #7e961a;
+  --fuego-700: #607219;
+  --fuego-800: #4d5b19;
+  --fuego-900: #414d1a;
+  --fuego-950: #212a09;
+
   /* Design tokens light mode */
   /* --background: var(--white);
   --foreground: var(--black); */
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
+  --background: deeppink; /* oklch(1 0 0); */
+  --foreground: var(--black);
+  --card: deeppink; /* oklch(1 0 0); */
+  --card-foreground: deeppink; /* oklch(0.145 0 0); */
+  --popover: var(--white);
+  --popover-foreground: var(--black);
+  --primary: var(--color-fuego-900);
+  --primary-foreground: var(--color-fuego-800);
+  --secondary: deeppink; /* oklch(0.97 0 0); */
+  --secondary-foreground: deeppink; /* oklch(0.205 0 0); */
+  --muted: deeppink; /* oklch(0.97 0 0); */
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --accent: var(--fuego-50);
+  --accent-foreground: var(--fuego-950);
+  --destructive: var(--color-rose-600);
+  --border: var(--color-neutral-100);
+  --input: deeppink; /* oklch(0.922 0 0); */
+  --ring: var(--color-fuego-600); /* oklch(0.708 0 0); */
+  --chart-1: deeppink; /* oklch(0.646 0.222 41.116); */
+  --chart-2: deeppink; /* oklch(0.6 0.118 184.704); */
+  --chart-3: deeppink; /* oklch(0.398 0.07 227.392); */
+  --chart-4: deeppink; /* oklch(0.828 0.189 84.429); */
+  --chart-5: deeppink; /* oklch(0.769 0.188 70.08); */
+  --sidebar: deeppink; /* oklch(0.985 0 0); */
+  --sidebar-foreground: deeppink; /* oklch(0.145 0 0) */
+  --sidebar-primary: deeppink; /* oklch(0.205 0 0) */
+  --sidebar-primary-foreground: deeppink; /* oklch(0.985 0 0) */
+  --sidebar-accent: deeppink; /* oklch(0.97 0 0) */
+  --sidebar-accent-foreground: deeppink; /* oklch(0.205 0 0) */
+  --sidebar-border: deeppink; /* oklch(0.922 0 0) */
+  --sidebar-ring: deeppink; /* oklch(0.708 0 0) */
 }
 
 @theme inline {
@@ -108,14 +120,27 @@
 } */
 
 body {
-  background: var(--white);
-  color: var(--black);
-  font-family: var(--font-inter-sans), -apple-system, BlinkMacSystemFont,
-    avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell,
-    Ubuntu, roboto, noto, helvetica, arial, sans-serif;
+  /* background: var(--white);
+  color: var(--black); */
+  font-family:
+    var(--font-inter-sans),
+    -apple-system,
+    BlinkMacSystemFont,
+    avenir next,
+    avenir,
+    segoe ui,
+    helvetica neue,
+    Adwaita Sans,
+    Cantarell,
+    Ubuntu,
+    roboto,
+    noto,
+    helvetica,
+    arial,
+    sans-serif;
 }
 
-.dark {
+/* .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -128,7 +153,7 @@ body {
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
+  --accent: var(--fuego-100);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
@@ -147,7 +172,7 @@ body {
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
-}
+} */
 
 @layer base {
   * {

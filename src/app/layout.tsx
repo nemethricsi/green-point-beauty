@@ -28,9 +28,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <body
-        className={`${interSans.variable} ${geistMono.variable} ${bricolageGrotesque.variable} antialiased`}
+        className={`${interSans.variable} ${geistMono.variable} ${bricolageGrotesque.variable} from-fuego-50 to-fuego-100 h-full bg-linear-to-br antialiased`}
       >
         {children}
       </body>
