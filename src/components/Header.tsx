@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -12,7 +14,7 @@ import { CalendarDaysIcon, MenuIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const components: { title: string; href: string; description: string }[] = [
+const bodyTreatments: { title: string; href: string; description: string }[] = [
   {
     title: "Kavitációs zsírbontás",
     href: "#",
@@ -38,6 +40,94 @@ const components: { title: string; href: string; description: string }[] = [
       "A narancsbőr, vagy más néven cellulit a női szépség makacs ellensége.",
   },
 ];
+
+const facialTreatments: { title: string; href: string; description: string }[] =
+  [
+    {
+      title: "Tisztító arckezelés",
+      href: "#",
+      description:
+        "Ez a kezelés segít lebontani a zsírt az egész testen. Meg még arra is jó, hogy még egy sort írjak ide.",
+    },
+    {
+      title: "Hidroabráziós bőrcsiszolás",
+      href: "#",
+      description:
+        "Ez a kezelés segít lebontani a zsírt az egész testen. Meg még arra is jó, hogy még egy sort írjak ide.",
+    },
+    {
+      title: "Mikrodermabráziós csiszolás",
+      href: "#",
+      description:
+        "Ez a kezelés segít lebontani a zsírt az egész testen. Meg még arra is jó, hogy még egy sort írjak ide.",
+    },
+    {
+      title: "Dermapen/Mezopen",
+      href: "#",
+      description:
+        "Ez a kezelés segít lebontani a zsírt az egész testen. Meg még arra is jó, hogy még egy sort írjak ide.",
+    },
+    {
+      title: "Rádiófrekvenciás arcfeszesítés",
+      href: "#",
+      description:
+        "Ez a kezelés segít lebontani a zsírt az egész testen. Meg még arra is jó, hogy még egy sort írjak ide.",
+    },
+    {
+      title: "Mikroáramos face lifting",
+      href: "#",
+      description:
+        "Ez a kezelés segít lebontani a zsírt az egész testen. Meg még arra is jó, hogy még egy sort írjak ide.",
+    },
+    {
+      title: "Carbon peeling",
+      href: "#",
+      description:
+        "Ez a kezelés segít lebontani a zsírt az egész testen. Meg még arra is jó, hogy még egy sort írjak ide.",
+    },
+    {
+      title: "Koreai arckontúr emelő masszázs",
+      href: "#",
+      description:
+        "Ez a kezelés segít lebontani a zsírt az egész testen. Meg még arra is jó, hogy még egy sort írjak ide.",
+    },
+    {
+      title: "SQT bőrmegújító kezelés",
+      href: "#",
+      description:
+        "Ez a kezelés segít lebontani a zsírt az egész testen. Meg még arra is jó, hogy még egy sort írjak ide.",
+    },
+    {
+      title: "Tű nélküli mezoterápia",
+      href: "#",
+      description:
+        "Ez a kezelés segít lebontani a zsírt az egész testen. Meg még arra is jó, hogy még egy sort írjak ide.",
+    },
+    {
+      title: "Hidrafacial kezelés",
+      href: "#",
+      description:
+        "Ez a kezelés segít lebontani a zsírt az egész testen. Meg még arra is jó, hogy még egy sort írjak ide.",
+    },
+    {
+      title: "IPL Szőrtelenítés",
+      href: "#",
+      description:
+        "Ez a kezelés segít lebontani a zsírt az egész testen. Meg még arra is jó, hogy még egy sort írjak ide.",
+    },
+    {
+      title: "Gyantázások",
+      href: "#",
+      description:
+        "Ez a kezelés segít lebontani a zsírt az egész testen. Meg még arra is jó, hogy még egy sort írjak ide.",
+    },
+    {
+      title: "Szempilla lifting",
+      href: "#",
+      description:
+        "Ez a kezelés segít lebontani a zsírt az egész testen. Meg még arra is jó, hogy még egy sort írjak ide.",
+    },
+  ];
 
 export const Header = () => {
   return (
@@ -74,6 +164,38 @@ export const Header = () => {
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Testkezelések</NavigationMenuTrigger>
                 <NavigationMenuContent>
+                  <ul className="grid w-[400px] gap-2">
+                    {bodyTreatments.map((bTreatment) => (
+                      <ListItem
+                        key={bTreatment.title}
+                        title={bTreatment.title}
+                        href={bTreatment.href}
+                      >
+                        {bTreatment.description}
+                      </ListItem>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Arckezelések</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[400px] gap-2">
+                    {facialTreatments.map((fTreatment) => (
+                      <ListItem
+                        key={fTreatment.title}
+                        title={fTreatment.title}
+                        href={fTreatment.href}
+                      >
+                        {fTreatment.description}
+                      </ListItem>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              {/* <NavigationMenuItem>
+                <NavigationMenuTrigger>Arckezelések</NavigationMenuTrigger>
+                <NavigationMenuContent>
                   <ul className="grid w-[200px] gap-4">
                     <li>
                       <NavigationMenuLink asChild>
@@ -88,23 +210,7 @@ export const Header = () => {
                     </li>
                   </ul>
                 </NavigationMenuContent>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>Arckezelések</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-2">
-                    {components.map((component) => (
-                      <ListItem
-                        key={component.title}
-                        title={component.title}
-                        href={component.href}
-                      >
-                        {component.description}
-                      </ListItem>
-                    ))}
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+              </NavigationMenuItem> */}
               <NavigationMenuItem>
                 <NavigationMenuLink
                   asChild
