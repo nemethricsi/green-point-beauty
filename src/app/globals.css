@@ -30,7 +30,7 @@
   --popover: var(--white);
   --popover-foreground: var(--black);
   --primary: var(--color-fuego-900);
-  --primary-foreground: var(--color-fuego-800);
+  --primary-foreground: var(--color-fuego-50);
   --secondary: deeppink; /* oklch(0.97 0 0); */
   --secondary-foreground: deeppink; /* oklch(0.205 0 0); */
   --muted: deeppink; /* oklch(0.97 0 0); */
@@ -39,7 +39,7 @@
   --accent-foreground: var(--fuego-950);
   --destructive: var(--color-rose-600);
   --border: var(--color-neutral-100);
-  --input: deeppink; /* oklch(0.922 0 0); */
+  --input: var(--color-fuego-500);
   --ring: var(--color-fuego-600); /* oklch(0.708 0 0); */
   --chart-1: deeppink; /* oklch(0.646 0.222 41.116); */
   --chart-2: deeppink; /* oklch(0.6 0.118 184.704); */

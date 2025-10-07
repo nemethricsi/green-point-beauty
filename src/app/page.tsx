@@ -2,6 +2,11 @@
 
 import { Button } from "@/components/ui/button";
 import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@/components/ui/input-group";
+import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
@@ -10,7 +15,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { CalendarDaysIcon, MenuIcon } from "lucide-react";
+import { CalendarDaysIcon, MenuIcon, SearchIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -43,95 +48,107 @@ const components: { title: string; href: string; description: string }[] = [
 
 export default function Home() {
   return (
-    <div className="border-fuego-500 border-b-2 bg-white p-4">
-      <div className="container mx-auto flex items-center justify-between">
-        <div className="hidden lg:flex">
-          <Image
-            src="/images/gpb-logo.svg"
-            alt="Green Point Beauty"
-            width={220}
-            height={60}
-          />
-        </div>
-        <div className="flex lg:hidden">
-          <Image
-            src="/images/gpb-logo.svg"
-            alt="Green Point Beauty"
-            width={150}
-            height={40}
-          />
-        </div>
+    <div>
+      <div className="border-fuego-500 border-b-2 bg-white p-4">
+        <div className="container mx-auto flex items-center justify-between">
+          <div className="hidden lg:flex">
+            <Image
+              src="/images/gpb-logo.svg"
+              alt="Green Point Beauty"
+              width={220}
+              height={60}
+            />
+          </div>
+          <div className="flex lg:hidden">
+            <Image
+              src="/images/gpb-logo.svg"
+              alt="Green Point Beauty"
+              width={150}
+              height={40}
+            />
+          </div>
 
-        <div className="hidden justify-center lg:flex">
-          <NavigationMenu viewport={false}>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  asChild
-                  className={navigationMenuTriggerStyle()}
-                >
-                  <Link href="/bemutatkozas">Bemutatkozás</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>Testkezelések</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[200px] gap-4">
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link href="#">Kezelés 1</Link>
-                      </NavigationMenuLink>
-                      <NavigationMenuLink asChild>
-                        <Link href="#">Kezelés 2</Link>
-                      </NavigationMenuLink>
-                      <NavigationMenuLink asChild>
-                        <Link href="#">Kezelés 3</Link>
-                      </NavigationMenuLink>
-                    </li>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>Arckezelések</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-2">
-                    {components.map((component) => (
-                      <ListItem
-                        key={component.title}
-                        title={component.title}
-                        href={component.href}
-                      >
-                        {component.description}
-                      </ListItem>
-                    ))}
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  asChild
-                  className={navigationMenuTriggerStyle()}
-                >
-                  <Link href="/arak">Árak</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  asChild
-                  className={navigationMenuTriggerStyle()}
-                >
-                  <Link href="/kapcsolat">Kapcsolat</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+          <div className="hidden justify-center lg:flex">
+            <NavigationMenu viewport={false}>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    asChild
+                    className={navigationMenuTriggerStyle()}
+                  >
+                    <Link href="/bemutatkozas">Bemutatkozás</Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Testkezelések</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[200px] gap-4">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link href="#">Kezelés 1</Link>
+                        </NavigationMenuLink>
+                        <NavigationMenuLink asChild>
+                          <Link href="#">Kezelés 2</Link>
+                        </NavigationMenuLink>
+                        <NavigationMenuLink asChild>
+                          <Link href="#">Kezelés 3</Link>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Arckezelések</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-2">
+                      {components.map((component) => (
+                        <ListItem
+                          key={component.title}
+                          title={component.title}
+                          href={component.href}
+                        >
+                          {component.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    asChild
+                    className={navigationMenuTriggerStyle()}
+                  >
+                    <Link href="/arak">Árak</Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    asChild
+                    className={navigationMenuTriggerStyle()}
+                  >
+                    <Link href="/kapcsolat">Kapcsolat</Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
+          <Button variant="default" className="hidden lg:flex">
+            <CalendarDaysIcon className="size-5" />
+            <span>Foglalás</span>
+          </Button>
+          <div className="flex lg:hidden">
+            <MenuIcon className="text-fuego-700" />
+          </div>
         </div>
-        <Button variant="default" className="hidden lg:flex">
-          <CalendarDaysIcon className="size-5" />
-          <span>Foglalás</span>
-        </Button>
-        <div className="flex lg:hidden">
-          <MenuIcon className="text-fuego-700" />
+      </div>
+      <div className="container mx-auto p-4">
+        <div className="mx-auto w-full max-w-xl">
+          <InputGroup>
+            <InputGroupInput placeholder="Search..." />
+            <InputGroupAddon>
+              <SearchIcon />
+            </InputGroupAddon>
+          </InputGroup>
         </div>
       </div>
     </div>
